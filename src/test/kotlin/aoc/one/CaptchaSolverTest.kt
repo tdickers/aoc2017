@@ -5,9 +5,9 @@ import org.jetbrains.spek.api.dsl.*
 import kotlin.test.*
 
 class CaptchaSolverTest : Spek({
-    describe("a captcha solver") {
+    describe("a captcha solver for problem 1") {
         val solver = CaptchaSolver()
-        val finalTestText = CaptchaSolverTest::class.java.getResource("/one/input.txt").readText()
+        val finalTestText = this::class.java.getResource("/one/input.txt").readText()
 
         it ("should convert strings to int lists") {
             assertEquals(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 0), solver.toIntList("1234567890"))

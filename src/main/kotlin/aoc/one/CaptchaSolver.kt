@@ -6,9 +6,9 @@ class CaptchaSolver {
     }
 
     fun sum(numbers: String):Int {
+        val numberList = toIntList(numbers)
         var accumulator = 0
         var total = 0
-        var numberList = toIntList(numbers)
 
         numberList.forEachIndexed { index, current ->
             var next:Int
@@ -28,12 +28,6 @@ class CaptchaSolver {
                 total += accumulator
                 accumulator = 0
             }
-
-//            println("Current is " + current)
-//            println("Next is " + next)
-//            println("Accumulator is " + accumulator)
-//            println("Total is " + total)
-//            println("-----")
         }
 
         return total
